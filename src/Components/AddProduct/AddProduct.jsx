@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from "axios"
 import './AddProduct.css'
 import uploadpic from '../../assets/upload.svg'
+import { useNavigate } from "react-router";
 
 const AddProduct = () => {
 
@@ -11,6 +12,7 @@ const AddProduct = () => {
     const [category,setCategory] = useState("")
     const [message,setMessage] = useState("")
     const [uploadStatus,setUploadStatus] = useState("")
+    const navigate = useNavigate()
 
     const [newImage,setNewImage] = useState(false)
     const [file, setFile] = useState("")
