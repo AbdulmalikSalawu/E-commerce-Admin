@@ -17,9 +17,9 @@ const ListProduct = () => {
     fetchData();
   },[])
 
-  const deleteUser = async (paramId,paramName) => {
+  const deleteProduct = async (paramId,paramName) => {
     if(window.confirm(`are you deleting ${paramName}`)){
-        await fetch("http://localhost:4000/deleteUser", {
+        await fetch("http://localhost:4000/deleteProduct", {
               method: "POST",
               crossDomain: true,
               headers: {
@@ -58,7 +58,7 @@ const ListProduct = () => {
                         <p>${product.oldPrice}</p>
                         <p>${product.newPrice}</p>
                         <p>{product.category}</p>
-                        <p key={product._id} onClick={() => deleteUser(product._id,product.name)} className='listproduct-remove-icon'>X</p>
+                        <p key={product._id} onClick={() => deleteProduct(product._id,product.name)} className='listproduct-remove-icon'>X</p>
                     </div>
                     <hr /></>
                 })}
