@@ -6,7 +6,7 @@ const ListProduct = () => {
   const [allProducts,setAllProducts] = useState([])
 
   const fetchData = async () => {
-    const response = await fetch('http://localhost:4000/getAllProducts', {
+    const response = await fetch('https://storeformalik.onrender.com/getAllProducts', {
      method: 'GET',
       });
       const data = await response.json();
@@ -19,7 +19,7 @@ const ListProduct = () => {
 
   const deleteProduct = async (paramId,paramName) => {
     if(window.confirm(`are you deleting ${paramName}`)){
-        await fetch("http://localhost:4000/deleteProduct", {
+        await fetch("https://storeformalik.onrender.com/deleteProduct", {
               method: "POST",
               crossDomain: true,
               headers: {

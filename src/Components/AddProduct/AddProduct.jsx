@@ -50,7 +50,7 @@ const AddProduct = () => {
 
     const addProduct = async () => {
       console.log(name,category)
-      const url = "http://localhost:4000/addProduct"
+      const url = "https://storeformalik.onrender.com/addProduct"
       try {
         await axios.post(url,{name,newImage,oldPrice,newPrice,category}).then((response)=>{
             console.log(response.data)
@@ -91,9 +91,12 @@ const AddProduct = () => {
           <option value="women">Women</option>
           <option value="men">Men</option>
           <option value="kid">Kid</option>
+          <option value="gadgets">Gadgets</option>
+          <option value="beauty">Beauty</option>
         </select>
       </div>
       <div className="addproduct-itemfield">
+        {uploadStatus}
         {/* <label htmlFor="file-input"> */}
           <img src={uploadpic} onClick={upload} alt="" className='addproduct-thumbnail-img' />
         {/* </label> */}
